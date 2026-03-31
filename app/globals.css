@@ -1,0 +1,64 @@
+/* Global styles for Wordle Clone */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  font-family: 'Clear Sans', 'Helvetica Neue', Arial, sans-serif;
+  background-color: #fff;
+  color: #1a1a1b;
+  min-height: 100vh;
+}
+
+/* Hide scrollbar but allow scrolling */
+body {
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Focus styles for accessibility */
+:focus-visible {
+  outline: 3px solid #6aaa64;
+  outline-offset: 2px;
+}
+
+/* Screen reader only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Color variables */
+:root {
+  --color-correct: #6aaa64;
+  --color-present: #c9b458;
+  --color-absent: #787c7e;
+  --color-default: #ffffff;
+  --color-border: #d3d6da;
+  --color-filled-border: #878a8c;
+  --color-keyboard: #d3d6da;
+}
+
+/* Prevent text selection on game elements */
+.tile, .key, .header {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Touch action for mobile */
+button, [role="button"] {
+  touch-action: manipulation;
+}

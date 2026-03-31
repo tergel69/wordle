@@ -1,0 +1,124 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 100%;
+}
+
+.modeSelector {
+  display: flex;
+  justify-content: center;
+  padding: 8px;
+}
+
+.game {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  gap: 20px;
+}
+
+.toast {
+  position: fixed;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  animation: fadeIn 0.3s ease-out;
+  z-index: 100;
+}
+
+.toast.error {
+  background-color: #787c7e;
+}
+
+.toast.success {
+  background-color: #6aaa64;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -20px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+.resultModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.resultContent {
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.resultContent h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #1a1a1b;
+}
+
+.resultContent p {
+  font-size: 1rem;
+  color: #787c7e;
+  margin-bottom: 20px;
+}
+
+.resultContent button {
+  padding: 12px 24px;
+  background-color: #6aaa64;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.resultContent button:hover {
+  background-color: #5a9a54;
+}
+
+/* Mobile responsive */
+@media (max-width: 500px) {
+  .game {
+    gap: 10px;
+  }
+  
+  .toast {
+    top: 60px;
+    padding: 10px 20px;
+    font-size: 0.875rem;
+  }
+  
+  .resultContent {
+    padding: 20px;
+  }
+  
+  .resultContent h2 {
+    font-size: 1.25rem;
+  }
+}

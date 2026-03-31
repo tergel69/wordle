@@ -1,0 +1,23 @@
+.board {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 10px;
+}
+
+.row {
+  display: flex;
+  gap: 5px;
+}
+
+/* Mobile responsive */
+@media (max-width: 500px) {
+  .board {
+    gap: 4px;
+    padding: 5px;
+  }
+  
+  .row {
+    gap: 4px;
+  }
+}
