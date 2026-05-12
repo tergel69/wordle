@@ -1,5 +1,3 @@
-// Main game page
-
 'use client';
 
 import { useEffect, useState } from 'react';
@@ -23,17 +21,18 @@ export default function Home() {
     setMode,
     gameStatus: currentStatus
   } = useGameStore();
-  const [showStats, setShowStats] = useState(false);
+  let [showStats, setShowStats] = useState(false);
   
-  // Initialize game on mount
+  // eniig daraa zasah heregtei
   useEffect(() => {
     initializeGame();
+    // console.log('game initialized'); // debug
   }, [initializeGame]);
   
-  // Clear toast after delay
+  // tseverleh
   useEffect(() => {
     if (toast) {
-      const timer = setTimeout(() => {
+      let timer = setTimeout(() => {
         clearToast();
       }, 3000);
       return () => clearTimeout(timer);
@@ -59,7 +58,8 @@ export default function Home() {
     setShowStats(false);
   };
   
-  const isGameOver = currentStatus === 'won' || currentStatus === 'lost';
+  let isGameOver = currentStatus === 'won' || currentStatus === 'lost';
+  const unused = null; // mart
   
   return (
     <main className={styles.container}>

@@ -1,5 +1,3 @@
-// GameBoard component for multi-length Wordle
-
 import { useGameStore } from '@/store/gameStore';
 import { Tile } from '@/components/Tile/Tile';
 import styles from './GameBoard.module.css';

@@ -1,5 +1,3 @@
-// Game logic utilities for multi-length Wordle games
-
 import { LetterStatus, GameMode, GAME_CONFIGS } from '@/types';
 
 // Letter feedback from guess
@@ -10,8 +8,7 @@ export interface LetterFeedback {
 }
 
 /**
- * Get feedback for a guess against the target word
- * Returns an array of LetterFeedback with status for each letter
+ * taamaglaliin sanal avah
  */
 export function getGuessFeedback(guess: string, targetWord: string): LetterFeedback[] {
   const guessLetters = guess.toUpperCase().split('');
@@ -19,10 +16,10 @@ export function getGuessFeedback(guess: string, targetWord: string): LetterFeedb
   const wordLength = targetLetters.length;
   const status: LetterStatus[] = new Array(wordLength).fill('absent');
   
-  // Track which target letters have been matched
+  // temdeglekh
   const targetMatched = new Array(wordLength).fill(false);
   
-  // First pass: Find correct positions (green)
+  // ekhni shalgalt
   for (let i = 0; i < wordLength; i++) {
     if (guessLetters[i] === targetLetters[i]) {
       status[i] = 'correct';
@@ -30,10 +27,10 @@ export function getGuessFeedback(guess: string, targetWord: string): LetterFeedb
     }
   }
   
-  // Second pass: Find present letters (yellow)
+  // khoer dakh shalgalt
   for (let i = 0; i < wordLength; i++) {
     if (status[i] !== 'correct') {
-      // Find a matching letter in target that hasn't been matched
+      // oldokhgui useg khaikh
       for (let j = 0; j < wordLength; j++) {
         if (!targetMatched[j] && guessLetters[i] === targetLetters[j]) {
           status[i] = 'present';
@@ -91,9 +88,7 @@ export function createInitialGuessesForMode(mode: GameMode): { letter: string; s
   return Array(config.maxAttempts).fill(null).map(() => createEmptyRow(mode));
 }
 
-/**
- * Create initial guesses (legacy function for backward compatibility)
- */
+// legacy function for backward compatibility
 export function createInitialGuesses(): { letter: string; status: LetterStatus }[][] {
   return createInitialGuessesForMode(5);
 }

@@ -1,5 +1,3 @@
-// ModeSelector component for selecting word length
-
 import { useState } from 'react';
 import { GameMode, GAME_CONFIGS } from '@/types';
 import styles from './ModeSelector.module.css';

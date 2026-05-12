@@ -1,5 +1,3 @@
-// Keyboard component with on-screen keys and physical keyboard support
-
 import { useCallback, useEffect } from 'react';
 import { useGameStore } from '@/store/gameStore';
 import { LetterStatus } from '@/types';
@@ -28,10 +26,10 @@ export function Keyboard({ onShowStats }: KeyboardProps) {
     }
   }, [addLetter, removeLetter, submitGuess]);
   
-  // Physical keyboard listener
+  // gar tovchluuriin sonsgoch
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      // Ignore if typing in an input field
+      // oroltiin talbart bikh ued algasakh
       if ((e.target as HTMLElement).tagName === 'INPUT') return;
       
       const key = e.key.toUpperCase();

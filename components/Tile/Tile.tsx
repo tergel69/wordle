@@ -1,5 +1,3 @@
-// Tile component for the game board
-
 import { LetterStatus } from '@/types';
 import styles from './Tile.module.css';
 

@@ -1,12 +1,8 @@
-// Statistics utilities for multi-length Wordle games
-
 import { GameMode, GAME_CONFIGS, Statistics, ModeStatistics } from '@/types';
 
 const STORAGE_KEY = 'wordle-statistics';
 
-/**
- * Get default mode statistics
- */
+// daraa zasah - TODO
 function getDefaultModeStatistics(): ModeStatistics {
   return {
     gamesPlayed: 0,
@@ -55,7 +51,7 @@ export function loadStatistics(): Statistics {
       return parsed;
     }
   } catch (error) {
-    console.error('Failed to load statistics:', error);
+    console.log('Failed to load statistics:', error);
   }
   
   return getDefaultStatistics();
@@ -101,13 +97,11 @@ export function saveStatistics(stats: Statistics): void {
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(stats));
   } catch (error) {
-    console.error('Failed to save statistics:', error);
+    console.log('Failed to save statistics:', error);
   }
 }
 
-/**
- * Get today's date string
- */
+// edge case
 function getTodayDate(): string {
   return new Date().toISOString().split('T')[0];
 }

@@ -16,7 +16,7 @@ export const GAME_CONFIGS: Record<GameMode, GameConfig> = {
   9: { mode: 9, maxAttempts: 8 },
 };
 
-// Legacy config for backward compatibility
+// legacy config for backward compatibility
 export const GAME_CONFIG = {
   WORD_LENGTH: 5,
   MAX_GUESSES: 6

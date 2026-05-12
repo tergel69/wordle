@@ -1,5 +1,3 @@
-// Game store using Zustand for multi-length Wordle games
-
 import { create } from 'zustand';
 import { 
   GameMode,
@@ -17,7 +15,7 @@ import {
 import { getDailyWordByLength } from '@/data/wordsMulti';
 import { updateStatistics, loadStatistics, saveStatistics } from '@/utils/statistics';
 
-// Helper function for status priority
+// barasan baissan
 const getStatusPriority = (status: LetterStatus | undefined): number => {
   switch (status) {
     case 'correct':
